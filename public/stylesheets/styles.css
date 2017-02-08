@@ -22,28 +22,32 @@ body, html {
 }
 /* line 22, ../../compass/sass/layout/_layout.scss */
 .menu .vote-tab {
-  background-color: #0ac1ff;
+  background-image: url(/images/carbonFiber.jpg);
+  background-position: center;
+  background-size: 100%;
   margin: auto 0px;
   line-height: 60px;
   height: 60px;
 }
-/* line 27, ../../compass/sass/layout/_layout.scss */
+/* line 29, ../../compass/sass/layout/_layout.scss */
 .menu .vote-tab h2 {
   line-height: 60px;
 }
-/* line 31, ../../compass/sass/layout/_layout.scss */
+/* line 33, ../../compass/sass/layout/_layout.scss */
 .menu .standings-tab {
-  background-color: #d30000;
+  background-image: url(/images/metal.jpg);
+  background-position: center;
+  background-size: 100%;
   margin: auto 0px;
   line-height: 60px;
   height: 60px;
 }
-/* line 36, ../../compass/sass/layout/_layout.scss */
+/* line 40, ../../compass/sass/layout/_layout.scss */
 .menu .standings-tab h2 {
   line-height: 60px;
 }
 
-/* line 42, ../../compass/sass/layout/_layout.scss */
+/* line 46, ../../compass/sass/layout/_layout.scss */
 .container {
   width: 80vw;
   height: 90vh;
@@ -66,15 +70,20 @@ body, html {
 }
 /* line 15, ../../compass/sass/views/_home.scss */
 .container .row .vote-box .img-box {
-  height: 90%;
+  height: 100%;
   margin: 10px auto;
+  overflow: hidden;
 }
 /* line 19, ../../compass/sass/views/_home.scss */
+.container .row .vote-box .img-box .img-card {
+  width: 100%;
+}
+/* line 23, ../../compass/sass/views/_home.scss */
 .container .row .vote-box .btn-box {
   height: auto;
   margin: auto;
 }
-/* line 22, ../../compass/sass/views/_home.scss */
+/* line 26, ../../compass/sass/views/_home.scss */
 .container .row .vote-box .btn-box input {
   margin: 10px 20px;
 }

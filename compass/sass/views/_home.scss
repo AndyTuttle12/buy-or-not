@@ -13,8 +13,12 @@
 			height:500px;
 			margin:auto;
 			.img-box{
-				height:90%;
+				height:100%;
 				margin: 10px auto;
+				overflow: hidden;
+				.img-card{
+					width:100%;
+				}
 			}
 			.btn-box{
 				height:auto;

@@ -20,7 +20,9 @@ body, html{
 		}
 	}
 	.vote-tab{
-		background-color: $vote;
+		background-image:url(/images/carbonFiber.jpg);
+		background-position: center;
+		background-size: 100%;
 		margin: auto 0px;
 		line-height: $menu-height;
 		height:$menu-height;
@@ -29,7 +31,9 @@ body, html{
 		}
 	}
 	.standings-tab{
-		background-color: $standings;
+		background-image:url(/images/metal.jpg);
+		background-position: center;
+		background-size: 100%;
 		margin: auto 0px;
 		line-height: $menu-height;
 		height:$menu-height;
