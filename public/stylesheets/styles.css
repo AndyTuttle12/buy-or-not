@@ -87,3 +87,23 @@ body, html {
 .container .row .vote-box .btn-box input {
   margin: 10px 20px;
 }
+
+/* line 8, ../../compass/sass/views/_standings.scss */
+.container .row .title {
+  margin: 20px auto;
+}
+/* line 11, ../../compass/sass/views/_standings.scss */
+.container .row .standings-wrapper {
+  margin: auto;
+  padding: 0px;
+}
+/* line 14, ../../compass/sass/views/_standings.scss */
+.container .row .standings-wrapper .standing-card {
+  float: left;
+  height: 450px;
+}
+/* line 17, ../../compass/sass/views/_standings.scss */
+.container .row .standings-wrapper .standing-card img {
+  width: 100%;
+  height: auto;
+}

@@ -7,11 +7,11 @@ block content
 			p.text-center Vote to see what is the coolest!
 		div.col-sm-8.vote-box
 			div.col-sm-12.text-center.img-box
-				img(class="img-card" src="/images/p1-gtr.jpg" alt="cars")
+				img(class="img-card" src="/images/cars/"+image+"" alt="cars")
 			div.col-sm-6.text-center.btn-box
-				a.text-center(href="/")
+				a.text-center(href="/vote/up/"+imageID)
 					input(type="button" class="btn btn-lg btn-success" value="Cool")
-				a.text-center(href="/")
+				a.text-center(href="/vote/down/"+imageID)
 					input(type="button" class="btn btn-lg btn-danger" value="Lame")
 
 

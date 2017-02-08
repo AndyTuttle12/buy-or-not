@@ -5,6 +5,20 @@
 
 .container{
 	.row{
-		
+		.title{
+			margin: 20px auto;
+		}
+		.standings-wrapper{
+			margin: auto;
+			padding:0px;
+			.standing-card{
+				float: left;
+				height: 450px;
+				img{
+					width:100%;
+					height: auto;
+				}
+			}
+		}
 	}
 }

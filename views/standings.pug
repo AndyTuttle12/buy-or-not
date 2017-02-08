@@ -2,5 +2,19 @@ extends layout
 
 block content
 	div.row.text-center
-		h= title
-		p Here is the list of rated cars.
+		div.title.text-center
+			h1.text-center= title
+			p.text-center Here is the list of rated cars.
+		div.standings-wrapper.col-sm-12.text-center
+			div.standing-card.col-sm-4.text-center
+				p --#{carName}
+				img(src="/images/cars/aventador.jpg" width="100%" alt="cars")
+				p Rating: ##{carRating}
+			div.standing-card.col-sm-4.text-center
+				p --#{carName}
+				img(src="/images/cars/aventador.jpg" width="100%" alt="cars")
+				p Rating: ##{carRating}
+			div.standing-card.col-sm-4.text-center
+				p --#{carName}
+				img(src="/images/cars/aventador.jpg" width="100%" alt="cars")
+				p Rating: ##{carRating}
