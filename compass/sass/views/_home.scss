@@ -3,6 +3,26 @@
 // Home View Styling
 // -------------------------------
 
-body{
-	
+.container{
+	.row{
+		margin: auto;
+		.title{
+			margin: 20px auto;
+		}
+		.vote-box{
+			height:500px;
+			margin:auto;
+			.img-box{
+				height:90%;
+				margin: 10px auto;
+			}
+			.btn-box{
+				height:auto;
+				margin: auto;
+				input{
+					margin:10px 20px;
+				}
+			}
+		}
+	}
 }

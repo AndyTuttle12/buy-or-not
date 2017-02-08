@@ -2,4 +2,46 @@
 // _LAYOUT.SCSS
 // Global Layout styles
 // -------------------------------
+body, html{
+	background-color:$blank;
+}
 
+.menu{
+	width:100vw;
+	height:$menu-height;
+	a {
+		margin:0;
+		padding:0;
+		color: $blank;
+		line-height: $menu-height;
+		&:hover{
+			text-decoration: none;
+			color: $highlight;
+		}
+	}
+	.vote-tab{
+		background-color: $vote;
+		margin: auto 0px;
+		line-height: $menu-height;
+		height:$menu-height;
+		h2{
+			line-height: $menu-height;
+		}
+	}
+	.standings-tab{
+		background-color: $standings;
+		margin: auto 0px;
+		line-height: $menu-height;
+		height:$menu-height;
+		h2{
+			line-height: $menu-height;
+		}
+	}
+}
+
+.container{
+	width: 80vw;
+	height: 90vh;
+	margin: auto;
+	background-color: $highlight;
+}
