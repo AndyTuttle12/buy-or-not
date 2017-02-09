@@ -48,4 +48,16 @@ body, html{
 	height: 90vh;
 	margin: auto;
 	background-color: $highlight;
+	display: flex;
+}
+.done{
+	width: 60vw;
+	height: 500px;
+	margin: 60px;
+	display:flex;
+	align: center;
+	align-self: center;
+	p{
+		margin-top: 100px;
+	}
 }

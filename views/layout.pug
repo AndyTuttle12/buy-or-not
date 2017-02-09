@@ -17,4 +17,8 @@ html
 					div.standings-tab.text-center
 						h2 Standings
 		div.container
-			block content
+			if typeof msg !== 'undefined'
+				div.done.text-center
+					p= msg
+			else
+				block content
