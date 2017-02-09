@@ -6,15 +6,13 @@ block content
 			h1.text-center= title
 			p.text-center Here is the list of rated cars.
 		div.standings-wrapper.col-sm-12.text-center
-			div.standing-card.col-sm-4.text-center
-				p --
-				img(src="/images/cars/aventador.jpg" width="100%" alt="cars")
-				p Rating: #
-			div.standing-card.col-sm-4.text-center
-				p --
-				img(src="/images/cars/aventador.jpg" width="100%" alt="cars")
-				p Rating: #
-			div.standing-card.col-sm-4.text-center
-				p --
-				img(src="/images/cars/aventador.jpg" width="100%" alt="cars")
-				p Rating: #
+			each car in carData
+				div.standing-card.col-sm-4.text-center
+					p= car.imageName
+					img(src="/images/cars/"+car.imageURL+"" alt="cars")
+					if car.totalVotes > 0
+						p Cool Factor: +#{car.totalVotes}
+					else if car.totalVotes < 0
+						p Cool Factor: #{car.totalVotes}
+					else if car.totalVotes = 0
+						p Cool Factor: 0

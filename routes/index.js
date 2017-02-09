@@ -8,8 +8,13 @@ var connection = mysql.createConnection({
   password : config.password,
   database : config.database
 });
-
 connection.connect();
+
+var multer  = require('multer');
+var upload = multer({ dest: 'public/images' });
+var type = upload.single('imageToUpload');
+var fs = require('fs');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -49,11 +54,15 @@ router.get('/vote/:voteDirection/:imageID', (req, res, next)=>{
 });
 
 router.get('/standings', (req, res, next)=>{
-	// var getCarsQuery = "SELECT * FROM votes";
-	// connection.query(getCarsQuery, (error, results, fields)=>{
-
-		res.render('standings', { title: 'Standings' });
-	// });
+	var getCarsQuery = "SELECT images.id, images.imageURL, images.imageName, SUM(votes.voteDirection) AS totalVotes FROM votes "+
+		"INNER JOIN images ON images.id = votes.imageID "+
+		"GROUP BY votes.imageID;";
+	connection.query(getCarsQuery, (error, results, fields)=>{
+		res.render('standings', {
+			title: 'Standings',
+			carData: results
+		});
+	});
 });
 
 router.get('/testQ', (req, res, next)=>{
@@ -63,16 +72,35 @@ router.get('/testQ', (req, res, next)=>{
 	// connection.query(query, [id1, id2], (error, results, fields)=>{
 	// 	res.json(results);
 	// });
-	var imageIdVoted = 14;
+	var imageIdVoted = 1;
 	var votedDirection = 1;
 	var insertQuery = "INSERT INTO votes (ip, imageID, voteDirection) VALUES ('?','?','?')";
 	connection.query(insertQuery, [req.ip, imageIdVoted, votedDirection], (error, results, fields)=>{
 		var query = "SELECT * FROM votes";
 		connection.query(query, (error, results, fields)=>{
-			res.json(results);
+			// results.json(results);
 		});
 	});
 });
 
+router.get('/uploadImage', (req, res, next)=>{
+	res.render('uploadImage', {});
+});
+
+router.post('/formSubmit', type, (req, res, next)=>{
+	var tmpPath = req.file.path;
+	var targetPath = 'public/images/'+req.file.originalname;
+	fs.readFile(tmpPath, (error, fileContents)=>{
+		fs.writeFile(targetPath, fileContents, (error)=>{
+			if (error) throw error;
+			var insertQuery = "INSERT INTO images (imageURL, imageName) VALUE (?,?)";
+			connection.query(insertQuery, [req.file.originalname, req.file.originalname], (error, results, fields)=>{
+				if (error) throw error;
+				res.redirect('/?file="uploaded"');
+			});
+			// res.json("DONE");
+		});
+	});
+});
 
 module.exports = router;
